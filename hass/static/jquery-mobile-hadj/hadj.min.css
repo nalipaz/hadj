@@ -159,8 +159,8 @@ html .ui-alt-icon.ui-checkbox-off:after,
 html .ui-alt-icon.ui-radio-off:after,
 html .ui-alt-icon .ui-checkbox-off:after,
 html .ui-alt-icon .ui-radio-off:after {
-	background-color: #494949 /*{global-icon-color}*/;
-	background-color: rgba(73,73,73,1) /*{global-icon-disc}*/;
+	background-color: #ffffff /*{global-icon-color}*/;
+	background-color: rgba(255,255,255,1) /*{global-icon-disc}*/;
 }
 /* No disc */
 .ui-nodisc-icon.ui-btn:after,
