@@ -1,7 +1,7 @@
 {% load hass_tags %}
 <body>
 <aside role="navigation">
-  <ul>
+  <ul class="{% request.is_ajax|yesno:'yes,no' %}">
   {% for sub_tab in sub_tabs %}
     <li>{{ sub_tab.label }}</li>
   {% endfor %}
