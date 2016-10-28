@@ -6,8 +6,16 @@ from django.views import generic
 from .models import Dashboard, Tab, SubTab, HassEntity
 
 
+class Dashboard(generic.listView):
+    context_object_name = 'dashboards'
+    template_name = 'hass/index.html'
+
+    def get_queryset(self):
+        return Dashboard.objects.all()
+
+
 class Dashboard(generic.DetailView):
     model = Dashboard
-    template_name = 'hass/index.html'
+    template_name = 'hass/dashboard.html'
 
 
