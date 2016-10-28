@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 
-from .models import Tab, SubTab, HassEntity
+from .models import Dashboard, Tab, SubTab, HassEntity
 
 
 def dashboard_view(request, dashboard_name):
