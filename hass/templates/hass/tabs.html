@@ -2,13 +2,6 @@
 
 <main>
   <div data-role="page">
-  {% for tab in tabs %}
-    <li>{{ tab.label }}
-      <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
-        {% render_subtabs tab %}
-      </ul>
-    </li>
-  {% endfor %}
   </div>
 </main>
 <footer data-role="footer" data-position="fixed" data-theme="a">
