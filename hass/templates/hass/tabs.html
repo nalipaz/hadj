@@ -4,7 +4,7 @@
 
     <ul id="tabs">
       {% for tab in tabs %}
-      <li class="ui-btn ui-icon-{{ tab.icon }} ui-btn-icon-left">{{ tab.label }}</li>
+      <li><a data-icon="{{tab.icon}}">{{ tab.label }}</a></li>
       {% endfor %}
     </ul>
 
