@@ -1,10 +1,10 @@
 {% load hass_tags %}
-<body>
+{% extends request.is_ajax|yesno:"header_ajax.html,header.html" %}
 <aside role="navigation">
-  <ul class="{% request.is_ajax|yesno:'yes,no' %}">
+  <ul>
   {% for sub_tab in sub_tabs %}
     <li>{{ sub_tab.label }}</li>
   {% endfor %}
   </ul>
 </aside>
-</body>
+{% extends request.is_ajax|yesno:"footer_ajax.html,footer.html" %}
