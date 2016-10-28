@@ -1,6 +1,6 @@
 {% load hass_tags %}
-<!--nav-->
-  <ul id="tabsyo">
+<nav>
+  <ul id="tabs">
     {% for tab in tabs %}
     <li>{{ tab.label }}
       <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
@@ -9,4 +9,4 @@
     </li>
     {% endfor %}
   </ul>
-<!--/nav-->
+</nav>
