@@ -6,7 +6,7 @@ from django.views import generic
 from .models import Dashboard, Tab, SubTab, HassEntity
 
 
-class Index(generic.listView):
+class Index(generic.ListView):
     context_object_name = 'dashboards'
     template_name = 'hass/index.html'
 
