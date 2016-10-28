@@ -5,6 +5,6 @@ from . import views
 app_name = 'hass'
 urlpatterns = [
     # url(r'^$', views.Index.as_view(), name='index'),
-    url(r'^(?P<dashboard_name>[a-zA-Z0-9-_]+)/$', views.dashboard_view, name='dashboard'),
+    url(r'^(?P<dashboard_id>[0-9]+)/$', views.Dashboard.as_view(), name='dashboard'),
 ]
 
