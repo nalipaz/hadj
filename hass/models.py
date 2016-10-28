@@ -12,9 +12,14 @@ class Dashboard(models.Model):
 class Tab(models.Model):
     label = models.CharField(max_length=128)
     icon = models.CharField(max_length=128)
+    tab = models.ForeignKey(
+        'Dashboard',
+        on_delete=models.DO_NOTHING,
+        null=True
+    )
 
     def __str__(self):
-        return self.label
+        return self.dashboard.name + " > " + self.label
 
 class SubTab(models.Model):
     label = models.CharField(max_length=128)
@@ -25,7 +30,7 @@ class SubTab(models.Model):
     )
 
     def __str__(self):
-        return self.tab.label + " > " + self.label
+        return self.tab.dashboard.name + " > " + self.tab.label + " > " + self.label
 
 
 class HassEntity(models.Model):
@@ -38,4 +43,4 @@ class HassEntity(models.Model):
     )
 
     def __str__(self):
-        return self.sub_tab.tab.label + " > " + self.sub_tab.label + " > " + self.label + " (" + self.entity_id + ")"
+        return self.sub_tab.tab.dashboard.name + " > " + self.sub_tab.tab.label + " > " + self.sub_tab.label + " > " + self.label + " (" + self.entity_id + ")"
