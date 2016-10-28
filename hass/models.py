@@ -6,7 +6,7 @@ class Dashboard(models.Model):
     theme = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.label
+        return self.name
 
 
 class Tab(models.Model):
