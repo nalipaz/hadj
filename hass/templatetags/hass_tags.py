@@ -5,10 +5,11 @@ from hass.models import Tab, SubTab, HassEntity
 register = template.Library()
 
 @register.inclusion_tag('hass/tabs.html', takes_context=True)
-def render_tabs(context):
-    tabs = Tab.objects.all()
+def render_tabs(context, dashboard):
+    tabs = Tab.objects.filter(dashboard=dashboard.id)
     return {
         'tabs': tabs,
+        'dashboard': dashboard
     }
 
 
