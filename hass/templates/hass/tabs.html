@@ -1,6 +1,12 @@
 {% load hass_tags %}
 
-
+{% for tab in tabs %}
+<li>{{ tab.label }}
+  <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
+    {% render_subtabs tab %}
+  </ul>
+</li>
+{% endfor %}
 <div data-role="footer" data-position="fixed">
   <div data-role="navbar" role="navigation">
 
