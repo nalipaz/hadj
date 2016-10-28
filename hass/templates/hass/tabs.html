@@ -1,21 +1,23 @@
 {% load hass_tags %}
 
-<main data-role="page">
+<main>
+  <div data-role="page">
   {% for tab in tabs %}
-  <li>{{ tab.label }}
-    <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
-      {% render_subtabs tab %}
-    </ul>
-  </li>
+    <li>{{ tab.label }}
+      <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
+        {% render_subtabs tab %}
+      </ul>
+    </li>
   {% endfor %}
+  </div>
 </main>
 <footer data-role="footer" data-position="fixed" data-theme="a">
   <div data-role="navbar" role="navigation">
 
     <ul id="tabs">
-      {% for tab in tabs %}
+    {% for tab in tabs %}
       <li><a href="/tab/{{ tab.id }}" data-prefetch="true" data-prefetch="true" data-icon="{{tab.icon}}">{{ tab.label }}</a></li>
-      {% endfor %}
+    {% endfor %}
     </ul>
 
   </div>
