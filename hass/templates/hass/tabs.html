@@ -1,6 +1,6 @@
 {% load hass_tags %}
 
-<main>
+<main data-role="page">
   {% for tab in tabs %}
   <li>{{ tab.label }}
     <ul id="tab-{{ tab.id }}" class="sub-tabs-list">
