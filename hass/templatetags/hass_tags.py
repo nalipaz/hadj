@@ -4,6 +4,20 @@ from hass.models import Tab, SubTab, HassEntity
 
 register = template.Library()
 
+@register.inclusion_tag('hass/header.html', takes_context=True)
+def render_header(context, dashboard):
+    return {
+        'dashboard': dashboard
+    }
+
+
+@register.inclusion_tag('hass/footer.html', takes_context=True)
+def render_footer(context, dashboard):
+    return {
+        'dashboard': dashboard
+    }
+
+
 @register.inclusion_tag('hass/tabs.html', takes_context=True)
 def render_tabs(context, dashboard):
     tabs = Tab.objects.filter(dashboard=dashboard.id)

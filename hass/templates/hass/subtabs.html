@@ -1,8 +1,4 @@
 {% load hass_tags %}
 {% for sub_tab in sub_tabs %}
-  <li>{{ sub_tab.label }}
-    <ul id="sub-tab-{{ sub_tab.id }} class="entity-list">
-      {% render_entities sub_tab %}
-    </ul>
-  </li>
+  <li>{{ sub_tab.label }}</li>
 {% endfor %}
