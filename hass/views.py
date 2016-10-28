@@ -11,6 +11,6 @@ class Index(generic.ListView):
     template_name = 'hass/index.html'
 
     def get_queryset(self):
-        return Tab.objects.all()
+        return Tab.objects.filter(dashboard=dashboard_name)
 
 

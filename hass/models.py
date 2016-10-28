@@ -1,16 +1,13 @@
 from django.db import models
 
-class HassEntity(models.Model):
-    entity_id = models.CharField(max_length=256)
-    label = models.CharField(max_length=128)
-    sub_tab = models.ForeignKey(
-        'SubTab',
-        on_delete=models.DO_NOTHING,
-        null=True
-    )
+
+class Dashboard(models.Model):
+    name = models.CharField(max_length=128)
+    theme = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.sub_tab.tab.label + " > " + self.sub_tab.label + " > " + self.label + " (" + self.entity_id + ")"
+        return self.label
+
 
 class Tab(models.Model):
     label = models.CharField(max_length=128)
@@ -30,3 +27,15 @@ class SubTab(models.Model):
     def __str__(self):
         return self.tab.label + " > " + self.label
 
+
+class HassEntity(models.Model):
+    entity_id = models.CharField(max_length=256)
+    label = models.CharField(max_length=128)
+    sub_tab = models.ForeignKey(
+        'SubTab',
+        on_delete=models.DO_NOTHING,
+        null=True
+    )
+
+    def __str__(self):
+        return self.sub_tab.tab.label + " > " + self.sub_tab.label + " > " + self.label + " (" + self.entity_id + ")"
