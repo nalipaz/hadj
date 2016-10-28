@@ -6,11 +6,9 @@ from django.views import generic
 from .models import Tab, SubTab, HassEntity
 
 
-class Index(generic.ListView, dashboard_name):
-    context_object_name = 'Tabs'
-    template_name = 'hass/index.html'
+def Dashboard(request, dashboard_name):
+    dashboard = get_object_or_404(Dashboard, name=dashboard_name)
 
-    def get_queryset(self):
-        return Tab.objects.filter(dashboard=dashboard_name)
+    return render(request, 'hass/index.html', {'dashboard': dashboard})
 
 
