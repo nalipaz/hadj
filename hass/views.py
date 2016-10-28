@@ -14,7 +14,7 @@ class Index(generic.ListView):
         return Dashboard.objects.all()
 
 
-class Dashboard(generic.DetailView):
+class DashboardDisplay(generic.DetailView):
     model = Dashboard
     template_name = 'hass/dashboard.html'
 
