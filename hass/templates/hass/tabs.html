@@ -4,13 +4,13 @@
 
     <ul id="tabs">
       {% for tab in tabs %}
-      <li>{{ tab.label }}
-        <!--ul id="tab-{{ tab.id }}" class="sub-tabs-list">
-          {% render_subtabs tab %}
-        </ul-->
-      </li>
+      <li>{{ tab.label }}</li>
       {% endfor %}
     </ul>
 
   </div>
 </div>
+
+<!--ul id="tab-{{ tab.id }}" class="sub-tabs-list">
+  {% render_subtabs tab %}
+</ul-->
