@@ -14,7 +14,7 @@
 
     <ul id="tabs">
       {% for tab in tabs %}
-      <li><a data-icon="{{tab.icon}}">{{ tab.label }}</a></li>
+      <li><a href="/tab/{{ tab.id }}" data-prefetch="true" data-prefetch="true" data-icon="{{tab.icon}}">{{ tab.label }}</a></li>
       {% endfor %}
     </ul>
 
