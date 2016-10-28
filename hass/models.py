@@ -12,7 +12,7 @@ class Dashboard(models.Model):
 class Tab(models.Model):
     label = models.CharField(max_length=128)
     icon = models.CharField(max_length=128)
-    tab = models.ForeignKey(
+    dashboard = models.ForeignKey(
         'Dashboard',
         on_delete=models.DO_NOTHING,
         null=True
