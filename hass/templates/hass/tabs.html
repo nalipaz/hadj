@@ -4,7 +4,7 @@
 
     <ul id="tabs">
       {% for tab in tabs %}
-      <li>{{ tab.label }}</li>
+      <li data-icon="{{ tab.icon }}">{{ tab.label }}</li>
       {% endfor %}
     </ul>
 
