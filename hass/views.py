@@ -19,3 +19,11 @@ class DashboardDisplay(generic.DetailView):
     template_name = 'hass/dashboard.html'
 
 
+class SubTabList(generic.ListView):
+    context_object_name = 'sub_tabs'
+    template_name = 'hass/subtabs.html'
+
+    def get_queryset(self):
+        return SubTab.objects.filter(tab=self.kwargs['tab_id'])
+
+
