@@ -1,0 +1,5 @@
+main > .ui-page > aside {
+  float: left;
+  min-height: inherit;
+  width: 30%;
+}
