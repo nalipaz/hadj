@@ -1,4 +1,4 @@
-{% extends request.is_ajax|yesno:"./header_ajax.html,./header.html" %}
+{% extends request.is_ajax|yesno:".header_ajax.html,.header.html" %}
 {% load hass_tags %}
 {% block content %}
 <aside role="navigation">
