@@ -1,5 +1,6 @@
-{% load hass_tags %}
 {% extends request.is_ajax|yesno:"header_ajax.html,header.html" %}
+{% load hass_tags %}
+{% block content %}
 <aside role="navigation">
   <ul>
   {% for sub_tab in sub_tabs %}
@@ -7,4 +8,4 @@
   {% endfor %}
   </ul>
 </aside>
-{% extends request.is_ajax|yesno:"footer_ajax.html,footer.html" %}
+{% endblock %}
