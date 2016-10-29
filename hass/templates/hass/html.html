@@ -1,11 +1,11 @@
 <!DOCTYPE html>{% load hass_tags %}
 <html>
   <head>
-    <title>{{ dashboard.name }}</title>
+    <title>{% firstof dashboard.name 'Default' %}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/static/jquery-mobile-themes/{{ dashboard.theme }}/{{ dashboard.theme }}.min.css" />
-    <link rel="stylesheet" href="/static/jquery-mobile-themes/{{ dashboard.theme }}/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="/static/jquery-mobile-themes/{% firstof dashboard.theme 'default' %}/{% firstof dashboard.theme 'default' %}.min.css" />
+    <link rel="stylesheet" href="/static/jquery-mobile-themes/{% firstof dashboard.theme 'default' %}/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="/static/css/jquery.mobile.custom.structure.min.css" />
     <script src="/static/js/jquery-1.12.4.min.js"></script>
     <script src="/static/js/jquery.mobile.custom.min.js"></script>
